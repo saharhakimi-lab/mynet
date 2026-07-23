@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מבצע סייבר: פיצוח הגדרות הרשת במחשב</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome & Lucide Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Fira+Code:wght@400;500;700&display=swap');
+        
+        body {
+            font-family: 'Assistant', sans-serif;
+            background-color: #0b0f19;
+            color: #f1f5f9;
+        }
+        .code-font {
+            font-family: 'Fira Code', monospace;
+        }
+        .glow-cyan {
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.25);
+        }
+        .glow-pulse {
+            animation: pulse-glow 2s infinite alternate;
+        }
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 10px rgba(6, 182, 212, 0.2); }
+            100% { box-shadow: 0 0 25px rgba(6, 182, 212, 0.6); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-slate-950">
+
+    <!-- Header Section -->
+    <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur-md sticky top-0 z-40">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="p-3 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl shadow-lg shadow-cyan-500/20 text-slate-950 font-black">
+                    <i class="fa-solid fa-terminal text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-black tracking-tight text-white flex items-center gap-2">
+                        מבצע סייבר: <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">פיצוח הגדרות הרשת</span>
+                    </h1>
+                    <p class="text-xs text-slate-400">שיעור אינטראקטיבי: גלה את כרטיס הרשת וכתובת הראוטר שלך</p>
+                </div>
+            </div>
+            <div class="flex gap-2">
+                <span class="bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 text-xs px-3 py-1.5 rounded-full font-bold flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span> משימה אקטיבית
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container mx-auto px-4 py-8 max-w-5xl space-y-12">
+
+        <!-- Intro Banner -->
+        <section class="bg-gradient-to-r from-slate-900 via-slate-850 to-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8 relative overflow-hidden shadow-2xl">
+            <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="relative z-10 space-y-4">
+                <span class="bg-blue-500/20 text-blue-400 text-xs font-bold px-3 py-1 rounded-md border border-blue-500/30">משימת פתיחה</span>
+                <h2 class="text-2xl md:text-3xl font-black text-white">איך המחשב שלך מדבר עם העולם? 🌐</h2>
+                <p class="text-slate-300 text-sm md:text-base leading-relaxed max-w-3xl">
+                    כדי לגלוש באינטרנט, לשחק אונליין או לשלוח הודעה – המחשב שלך חייב "תעודת זהות" רשתית. בשיעור הזה נהפוך לחוקרי סייבר: נלמד לפתוח את מסוף המחשב (CMD), נאתר את **כרטיס הרשת** הפיזי, ונחשוף את כתובת ה-IP של **הראוטר בבית (Default Gateway)**!
+                </p>
+            </div>
+        </section>
+
+        <!-- STEP 1: Concepts Unlocked -->
+        <section class="space-y-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-cyan-500 text-slate-950 font-black flex items-center justify-center text-sm">1</div>
+                <h3 class="text-xl font-bold text-white">פענוח המושגים: ארבעת המופלאים</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- MAC Address -->
+                <div class="bg-slate-900/80 border border-slate-800 hover:border-cyan-500/50 transition-all rounded-2xl p-5 space-y-3 group">
+                    <div class="flex items-center justify-between">
+                        <span class="p-2 bg-purple-500/10 text-purple-400 rounded-xl border border-purple-500/20"><i class="fa-solid fa-fingerprint text-xl"></i></span>
+                        <span class="text-[10px] code-font text-slate-500">Physical Address</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">1. כתובת MAC (כרטיס הרשת)</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        זהו "מספר תעודת הזהות" הפיזי של כרטיס הרשת שלך. הוא נצרב במפעל ולא משתנה לעולם! נראה כך: <code class="text-purple-300 code-font">00-1A-2B-3C-4D-5E</code>.
+                    </p>
+                </div>
+
+                <!-- IPv4 Address -->
+                <div class="bg-slate-900/80 border border-slate-800 hover:border-cyan-500/50 transition-all rounded-2xl p-5 space-y-3 group">
+                    <div class="flex items-center justify-between">
+                        <span class="p-2 bg-emerald-500/10 text-emerald-400 rounded-xl border border-emerald-500/20"><i class="fa-solid fa-network-wired text-xl"></i></span>
+                        <span class="text-[10px] code-font text-slate-500">IPv4 Address</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">2. כתובת IP (הכתובת שלך ברשת)</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        הכתובת הלוגית של המחשב בתוך הרשת הביתית. הראוטר מחלק אותה באופן אוטומטי (DHCP). נראית כך: <code class="text-emerald-300 code-font">192.168.1.15</code>.
+                    </p>
+                </div>
+
+                <!-- Subnet Mask -->
+                <div class="bg-slate-900/80 border border-slate-800 hover:border-cyan-500/50 transition-all rounded-2xl p-5 space-y-3 group">
+                    <div class="flex items-center justify-between">
+                        <span class="p-2 bg-amber-500/10 text-amber-400 rounded-xl border border-amber-500/20"><i class="fa-solid fa-map-location-dot text-xl"></i></span>
+                        <span class="text-[10px] code-font text-slate-500">Subnet Mask</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">3. מסכת רשת (Subnet Mask)</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        הקוד שמפריד בין "שם השכונה" ל"מספר הבית". ברוב הרשתות הביתיות היא תהיה: <code class="text-amber-300 code-font">255.255.255.0</code>.
+                    </p>
+                </div>
+
+                <!-- Default Gateway -->
+                <div class="bg-slate-900/80 border border-slate-800 hover:border-cyan-500/50 transition-all rounded-2xl p-5 space-y-3 group border-cyan-500/30">
+                    <div class="flex items-center justify-between">
+                        <span class="p-2 bg-cyan-500/10 text-cyan-400 rounded-xl border border-cyan-500/20"><i class="fa-solid fa-router text-xl"></i></span>
+                        <span class="text-[10px] code-font text-cyan-400 font-bold">Default Gateway</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">4. שער ברירת המחדל (הראוטר!)</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        **שער היציאה לאינטרנט.** זוהי הכתובת הפנימית של הראוטר הביתי שלך. כל חבילת מידע שרוצה לצאת החוצה עוברת דרכו! למשל: <code class="text-cyan-300 code-font">192.168.1.1</code>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 2: Hands-on Lab -->
+        <section class="space-y-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-cyan-500 text-slate-950 font-black flex items-center justify-center text-sm">2</div>
+                <h3 class="text-xl font-bold text-white">המעבדה: שלוף את נתוני הרשת שלך!</h3>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8 space-y-6">
+                <div class="space-y-2">
+                    <h4 class="text-lg font-bold text-cyan-400">הוראות ביצוע צעד-אחר-צעד:</h4>
+                    <ol class="list-decimal list-inside text-sm text-slate-300 space-y-2">
+                        <li>לחץ במקלדת על מקש <kbd class="bg-slate-800 border border-slate-700 text-cyan-300 px-2 py-0.5 rounded text-xs code-font">Windows + R</kbd> (או חפש <strong>CMD</strong> בשורת החיפוש).</li>
+                        <li>בחלונית שנפתחה הקלד <code class="text-cyan-400 font-bold code-font">cmd</code> ולחץ <strong>Enter</strong>.</li>
+                        <li>בחלון השחור שנפתח, הקלד את הפקודה הבאה ולחץ <strong>Enter</strong>:</li>
+                    </ol>
+                </div>
+
+                <!-- Terminal Box -->
+                <div class="bg-slate-950 border border-slate-800 rounded-2xl p-4 md:p-6 shadow-inner relative group">
+                    <div class="flex justify-between items-center mb-3 border-b border-slate-800 pb-2">
+                        <div class="flex gap-1.5">
+                            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                        </div>
+                        <span class="text-[11px] code-font text-slate-500">Command Prompt</span>
+                    </div>
+                    <div class="code-font text-sm md:text-base text-emerald-400 flex items-center gap-2">
+                        <span class="text-slate-500">C:\Users\Student&gt;</span>
+                        <span class="text-white font-bold tracking-wide">ipconfig /all</span>
+                        <span class="w-2 h-5 bg-cyan-400 inline-block animate-pulse"></span>
+                    </div>
+                </div>
+
+                <!-- Guidance on reading output -->
+                <div class="bg-slate-950/50 border border-cyan-500/20 rounded-2xl p-5 space-y-3">
+                    <h5 class="text-sm font-bold text-cyan-300 flex items-center gap-2">
+                        <i class="fa-solid fa-magnifying-glass"></i> מה מוארים עכשיו בחלון השחור?
+                    </h5>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        חפש את כרטיס הרשת הפעיל שלך (בדרך כלל נקרא <strong class="text-white">Wireless LAN adapter Wi-Fi</strong> אם אתה באלחוטי, או <strong class="text-white">Ethernet adapter</strong> אם אתה מחובר בכבל):
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside font-mono">
+                        <li><span class="text-purple-400">Physical Address:</span> זוהי כתובת ה-MAC של הכרטיס.</li>
+                        <li><span class="text-emerald-400">IPv4 Address:</span> כתובת ה-IP האישית של המחשב שלך.</li>
+                        <li><span class="text-cyan-400">Default Gateway:</span> 💥 הנה הראוטר שלך! רשום את הכתובת הזו בצד.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP 3: Interactive Challenge -->
+        <section class="space-y-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-cyan-500 text-slate-950 font-black flex items-center justify-center text-sm">3</div>
+                <h3 class="text-xl font-bold text-white">אתגר הפיצוח: בדוק את עצמך</h3>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8 space-y-6">
+                <p class="text-sm text-slate-300">הזן את הכתובות שמצאת במסוף כדי לאמת שהבנת את המבנה:</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold text-slate-400">מהי כתובת ה-IP של המחשב שלך?</label>
+                        <input type="text" id="input-ip" placeholder="לדוגמה: 192.168.1.15" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-cyan-300 code-font focus:outline-none focus:border-cyan-500">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold text-slate-400">מהי כתובת הראוטר (Default Gateway)?</label>
+                        <input type="text" id="input-gw" placeholder="לדוגמה: 192.168.1.1" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-cyan-300 code-font focus:outline-none focus:border-cyan-500">
+                    </div>
+                </div>
+
+                <button onclick="checkAnswers()" class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black py-3 rounded-xl text-sm transition-all shadow-lg shadow-cyan-500/10">
+                    אמת נתונים וסיים משימה 🚀
+                </button>
+
+                <div id="feedback" class="hidden p-4 rounded-xl text-xs font-bold text-center"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-6 text-center text-slate-600 text-xs mt-12">
+        <p>אקדמיית סייבר ורשתות תקשורת • למידה חווייתית ואינטראקטיבית</p>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- הוספת כפתור העזרה והחלונית הצפה במדויק -->
+    <!-- ========================================== -->
+
+    <!-- כפתור עזרה צף קבוע בפינה התחתונה עם אווטר מובנה -->
+    <div class="fixed bottom-6 left-6 z-50 no-print">
+        <button id="openHelpModalBtn" class="flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-2 px-4 rounded-full shadow-lg shadow-cyan-500/20 transition-all duration-300 transform hover:scale-105 group border border-cyan-400/30">
+            <!-- אווטר קטן בתוך הכפתור -->
+            <div class="w-8 h-8 rounded-full border border-white/40 overflow-hidden bg-slate-950 flex-shrink-0 shadow-inner">
+                <img src="https://lh3.googleusercontent.com/d/1fzqv93VKIW_VT8-e1HdJxBmbU2sFnwlb" alt="אווטר בוט עזרה" class="w-full h-full object-cover">
+            </div>
+            <span>בוט עזרה</span>
+        </button>
+    </div>
+
+    <!-- חלונית עזרה צפה (Modal) עם אווטר מורחב -->
+    <div id="helpModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4 transition-all duration-300">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 max-w-sm w-full text-center relative shadow-2xl shadow-cyan-500/5 transform scale-95 transition-transform duration-300" id="helpModalContent">
+            <!-- כפתור סגירה X -->
+            <button id="closeHelpModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors p-1 rounded-lg hover:bg-slate-800">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            
+            <!-- אווטר התמונה בחלונית -->
+            <div class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-cyan-400/50 p-1 bg-slate-950 shadow-lg shadow-cyan-500/20 overflow-hidden">
+                <img src="https://lh3.googleusercontent.com/d/1fzqv93VKIW_VT8-e1HdJxBmbU2sFnwlb" alt="תמונת בוט עזרה" class="w-full h-full object-cover rounded-full">
+            </div>
+
+            <h3 class="text-lg font-black text-white mb-2">צריך עזרה במשימה?</h3>
+            <p class="text-sm text-slate-400 mb-6 leading-relaxed">בוט העזרה הרשמי של האקדמיה זמין כעת כדי לענות על שאלות, להסביר מושגים ולכוון אותך לפתרון המלא!</p>
+            
+            <!-- כפתור הפניה לקישור הבוט -->
+            <a href="https://gemini.google.com/gem/167016ac4a4b/66c3b83daa7940ef?usp=sharing" target="_blank" class="w-full flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-600 text-slate-950 font-black py-3 px-4 rounded-xl transition-all duration-200 shadow-lg shadow-cyan-500/10">
+                <span>הפעל את בוט העזרה</span>
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- סקריפט להפעלת החלונית -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('helpModal');
+            const modalContent = document.getElementById('helpModalContent');
+            const openBtn = document.getElementById('openHelpModalBtn');
+            const closeBtn = document.getElementById('closeHelpModalBtn');
+
+            if(openBtn && modal && modalContent && closeBtn) {
+                openBtn.addEventListener('click', () => {
+                    modal.classList.remove('hidden');
+                    setTimeout(() => modalContent.classList.remove('scale-95'), 10);
+                });
+
+                closeBtn.addEventListener('click', () => {
+                    modalContent.classList.add('scale-95');
+                    setTimeout(() => modal.classList.add('hidden'), 150);
+                });
+
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modalContent.classList.add('scale-95');
+                        setTimeout(() => modal.classList.add('hidden'), 150);
+                    }
+                });
+            }
+
+            // Initialize Lucide icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+
+        // Basic verification logic for challenge
+        function checkAnswers() {
+            const ip = document.getElementById('input-ip').value.trim();
+            const gw = document.getElementById('input-gw').value.trim();
+            const feedback = document.getElementById('feedback');
+
+            feedback.classList.remove('hidden', 'bg-emerald-500/20', 'text-emerald-400', 'bg-red-500/20', 'text-red-400');
+
+            if(ip !== "" && gw !== "") {
+                feedback.classList.add('bg-emerald-500/20', 'text-emerald-400', 'border', 'border-emerald-500/30');
+                feedback.innerHTML = '🎉 עבודה מעולה! פענחת בהצלחה את כתובות הרשת. כעת אתה יודע בדיוק איפה נמצא הראוטר שלך!';
+            } else {
+                feedback.classList.add('bg-red-500/20', 'text-red-400', 'border', 'border-red-500/30');
+                feedback.innerHTML = '⚠️ נא למלא את שתי הכתובות כדי לסיים את המשימה.';
+            }
+        }
+    </script>
+</body>
+</html>
