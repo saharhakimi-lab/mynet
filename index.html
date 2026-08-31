@@ -13,8 +13,8 @@
                 extend: {
                     colors: {
                         cyber: {
-                            light: '#f8fafc',
-                            panel: 'rgba(255, 255, 255, 0.95)',
+                            light: '#fdfbf7',
+                            panel: 'rgba(255, 253, 248, 0.95)',
                             border: 'rgba(2, 132, 199, 0.3)',
                             cyan: '#0284c7',
                             neon: '#0369a1',
@@ -56,19 +56,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Google Fonts & Day Mode Styles -->
+    <!-- Google Fonts & Custom Cream Theme Styles -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800;900&family=Rubik:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500;700&family=Fira+Code:wght@400;500;700&display=swap');
         
         :root {
-            --bg-base: #f8fafc;
-            --bg-card: rgba(255, 255, 255, 0.95);
+            --bg-base: #fdfbf7; /* רקע שמנת רך ומזמין */
+            --bg-card: rgba(255, 253, 248, 0.95);
             --border-color: rgba(2, 132, 199, 0.25);
-            --text-main: #0f172a;
+            --text-main: #1e293b;
             --text-muted: #475569;
             --accent-cyan: #0284c7;
             --accent-neon: #0369a1;
-            --grid-line: rgba(2, 132, 199, 0.08);
+            --grid-line: rgba(180, 150, 110, 0.08);
         }
 
         body {
@@ -86,13 +86,13 @@
             font-family: 'JetBrains Mono', 'Fira Code', monospace;
         }
 
-        /* 🎯 האוואטר המטורלל המסתובב בלי רקע מיותר */
+        /* 🎯 האוואטר המטורלל המסתובב */
         .crazy-avatar {
-            width: 52px;
-            height: 52px;
+            width: 56px;
+            height: 56px;
             object-fit: cover;
             border-radius: 50%;
-            box-shadow: 0 0 12px rgba(126, 34, 206, 0.4);
+            box-shadow: 0 0 14px rgba(126, 34, 206, 0.4);
             animation: crazySpin 6s linear infinite;
         }
 
@@ -111,21 +111,21 @@
             }
         }
 
-        /* Cyber Grid Background */
+        /* Cyber Grid Background over Cream */
         .cyber-grid {
             background-image: 
                 linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
                 linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-            background-size: 30px 30px;
+            background-size: 32px 32px;
         }
 
-        /* Glassmorphic Cyber Card */
+        /* Glassmorphic Cyber Card on Cream */
         .cyber-card {
             background: var(--bg-card);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid var(--border-color);
-            box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 10px 25px -5px rgba(180, 140, 90, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
             position: relative;
             transition: all 0.3s ease;
         }
@@ -136,7 +136,7 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 2px;
+            height: 3px;
             background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
         }
 
@@ -179,37 +179,36 @@
 <body class="min-h-screen flex flex-col justify-between selection:bg-sky-500 selection:text-white cyber-grid relative">
 
     <!-- Scanline Overlay Effect -->
-    <div class="fixed inset-0 pointer-events-none z-40 overflow-hidden opacity-25">
+    <div class="fixed inset-0 pointer-events-none z-40 overflow-hidden opacity-20">
         <div class="w-full h-24 bg-gradient-to-b from-transparent via-sky-500/15 to-transparent animate-scanline"></div>
     </div>
 
-    <!-- Glowing Ambient Lights -->
-    <div class="fixed -top-40 -right-40 w-96 h-96 bg-sky-400/15 rounded-full blur-[120px] pointer-events-none"></div>
-    <div class="fixed -bottom-40 -left-40 w-96 h-96 bg-purple-400/15 rounded-full blur-[120px] pointer-events-none"></div>
+    <!-- Glowing Ambient Lights adapted for Cream background -->
+    <div class="fixed -top-40 -right-40 w-96 h-96 bg-sky-300/20 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="fixed -bottom-40 -left-40 w-96 h-96 bg-purple-300/20 rounded-full blur-[120px] pointer-events-none"></div>
 
     <!-- Header Section -->
-    <header class="border-b border-sky-200 bg-white/85 backdrop-blur-xl sticky top-0 z-30 shadow-sm">
+    <header class="border-b border-amber-200/60 bg-amber-50/90 backdrop-blur-xl sticky top-0 z-30 shadow-sm">
         <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-4">
-                <!-- אוואטר מטורלל במקום האייקון הישן -->
                 <div class="flex-shrink-0" style="perspective: 1000px;">
                     <img src="https://lh3.googleusercontent.com/d/1t9QaPCKLvtAhWncetA83ALY8EIvpnFte" alt="Crazy Avatar" class="crazy-avatar">
                 </div>
                 <div>
-                    <h1 class="text-xl md:text-2xl font-black tracking-wide text-slate-900 flex items-center gap-2">
+                    <h1 class="text-2xl md:text-3xl font-black tracking-wide text-slate-900 flex items-center gap-2">
                         מבצע סייבר: <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-teal-600 to-blue-700">פיצוח הגדרות הרשת</span>
                     </h1>
-                    <p class="text-xs text-slate-500 font-medium">שיעור אינטראקטיבי: גלה את כרטיס הרשת וכתובת הראוטר שלך</p>
+                    <p class="text-sm text-slate-600 font-semibold">שיעור אינטראקטיבי: גלה את כרטיס הרשת וכתובת הראוטר שלך</p>
                 </div>
             </div>
 
             <div class="flex items-center gap-3">
-                <div class="cyber-card px-3.5 py-1.5 rounded-full border border-sky-300 bg-sky-50/80 flex items-center gap-2">
-                    <span class="relative flex h-2.5 w-2.5">
+                <div class="cyber-card px-4 py-2 rounded-full border border-sky-300 bg-sky-50/90 flex items-center gap-2 shadow-sm">
+                    <span class="relative flex h-3 w-3">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-600"></span>
+                      <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-600"></span>
                     </span>
-                    <span class="text-xs font-bold text-sky-700 tracking-wider code-font uppercase" dir="ltr">STATUS: ACTIVE</span>
+                    <span class="text-xs md:text-sm font-bold text-sky-800 tracking-wider code-font uppercase" dir="ltr">STATUS: ACTIVE</span>
                 </div>
             </div>
         </div>
@@ -219,14 +218,14 @@
     <main class="container mx-auto px-4 py-8 max-w-5xl space-y-10 relative z-10">
 
         <!-- Intro Banner -->
-        <section class="cyber-card rounded-3xl p-6 md:p-8 relative overflow-hidden group">
+        <section class="cyber-card rounded-3xl p-6 md:p-8 relative overflow-hidden group border-amber-200/80">
             <div class="hud-corner hud-tl"></div><div class="hud-corner hud-tr"></div>
             <div class="hud-corner hud-bl"></div><div class="hud-corner hud-br"></div>
             
             <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
             <div class="relative z-10 space-y-4">
-                <div class="inline-flex items-center gap-2 bg-sky-100 text-sky-800 text-xs font-bold px-3 py-1 rounded-full border border-sky-300 code-font">
+                <div class="inline-flex items-center gap-2 bg-sky-100 text-sky-900 text-xs md:text-sm font-bold px-3.5 py-1.5 rounded-full border border-sky-300 code-font">
                     <i class="fa-solid fa-shield-halved text-sky-600"></i>
                     <span dir="ltr">MISSION_BRIEFING // 01</span>
                 </div>
@@ -235,10 +234,10 @@
                     איך המחשב שלך מדבר עם העולם? <span class="inline-block animate-float">🌐</span>
                 </h2>
                 
-                <p class="text-sm md:text-base leading-relaxed max-w-3xl text-slate-700">
-                    כדי לגלוש באינטרנט, לשחק אונליין או לשלוח הודעה – המחשב שלך חייב <span class="text-sky-600 font-bold">"תעודת זהות"</span> רשתית. 
-                    בשיעור הזה נהפוך לחוקרי סייבר: נלמד לפתוח את מסוף המחשב (<span dir="ltr" class="inline-block code-font text-sky-800 font-bold bg-sky-100 px-1.5 py-0.5 rounded border border-sky-200">CMD</span>), 
-                    נאתר את <strong class="text-sky-700">כרטיס הרשת</strong> הפיזי, ונחשוף את כתובת ה-IP של <strong class="text-blue-700">הראוטר בבית (Default Gateway)</strong>!
+                <p class="text-base md:text-lg leading-relaxed max-w-3xl text-slate-800 font-medium">
+                    כדי לגלוש באינטרנט, לשחק אונליין או לשלוח הודעה – המחשב שלך חייב <span class="text-sky-700 font-bold">"תעודת זהות"</span> רשתית. 
+                    בשיעור הזה נהפוך לחוקרי סייבר: נלמד לפתוח את מסוף המחשב (<span dir="ltr" class="inline-block code-font text-sky-900 font-bold bg-sky-100 px-2 py-0.5 rounded border border-sky-300">CMD</span>), 
+                    נאתר את <strong class="text-sky-800 font-bold">כרטיס הרשת</strong> הפיזי, ונחשוף את כתובת ה-IP של <strong class="text-blue-800 font-bold">הראוטר בבית (Default Gateway)</strong>!
                 </p>
             </div>
         </section>
@@ -246,26 +245,26 @@
         <!-- STEP 1: Concepts Unlocked -->
         <section class="space-y-6">
             <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-500 to-blue-600 text-white font-black flex items-center justify-center text-base shadow-lg shadow-sky-500/20 border border-sky-300">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-500 to-blue-600 text-white font-black flex items-center justify-center text-lg shadow-lg shadow-sky-500/20 border border-sky-300">
                     1
                 </div>
-                <h3 class="text-xl font-bold tracking-wide text-slate-900">פענוח המושגים: ארבעת המופלאים</h3>
+                <h3 class="text-2xl md:text-3xl font-black tracking-wide text-slate-900">פענוח המושגים: ארבעת המופלאים</h3>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- MAC Address -->
                 <div class="cyber-card hover:border-purple-400 transition-all duration-300 rounded-2xl p-6 space-y-4 group">
                     <div class="hud-corner hud-tl"></div><div class="hud-corner hud-br"></div>
                     <div class="flex items-center justify-between">
-                        <span class="p-3 bg-purple-100 text-purple-700 rounded-xl border border-purple-200 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-fingerprint text-xl"></i>
+                        <span class="p-3.5 bg-purple-100 text-purple-700 rounded-xl border border-purple-200 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-fingerprint text-2xl"></i>
                         </span>
-                        <span class="text-[10px] code-font text-purple-800 bg-purple-50 px-2 py-1 rounded border border-purple-200" dir="ltr">Physical Address</span>
+                        <span class="text-xs code-font font-bold text-purple-900 bg-purple-100 px-2.5 py-1 rounded border border-purple-300" dir="ltr">Physical Address</span>
                     </div>
-                    <h4 class="text-lg font-bold text-slate-900 group-hover:text-purple-700 transition-colors">1. כתובת MAC (כרטיס הרשת)</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">
+                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-purple-700 transition-colors">1. כתובת MAC (כרטיס הרשת)</h4>
+                    <p class="text-sm md:text-base text-slate-700 leading-relaxed font-medium">
                         זהו "מספר תעודת הזהות" הפיזי של כרטיס הרשת שלך. הוא נצרב במפעל ולא משתנה לעולם! נראה כך: 
-                        <code dir="ltr" class="block mt-2 p-2 bg-slate-100 rounded-lg text-purple-800 code-font border border-purple-200 text-center font-bold">00-1A-2B-3C-4D-5E</code>
+                        <code dir="ltr" class="block mt-2.5 p-2.5 bg-amber-50/80 rounded-xl text-purple-900 code-font border border-purple-200 text-center font-bold text-sm md:text-base shadow-sm">00-1A-2B-3C-4D-5E</code>
                     </p>
                 </div>
 
@@ -273,31 +272,31 @@
                 <div class="cyber-card hover:border-emerald-400 transition-all duration-300 rounded-2xl p-6 space-y-4 group">
                     <div class="hud-corner hud-tl"></div><div class="hud-corner hud-br"></div>
                     <div class="flex items-center justify-between">
-                        <span class="p-3 bg-emerald-100 text-emerald-700 rounded-xl border border-emerald-200 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-network-wired text-xl"></i>
+                        <span class="p-3.5 bg-emerald-100 text-emerald-700 rounded-xl border border-emerald-200 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-network-wired text-2xl"></i>
                         </span>
-                        <span class="text-[10px] code-font text-emerald-800 bg-emerald-50 px-2 py-1 rounded border border-emerald-200" dir="ltr">IPv4 Address</span>
+                        <span class="text-xs code-font font-bold text-emerald-900 bg-emerald-100 px-2.5 py-1 rounded border border-emerald-300" dir="ltr">IPv4 Address</span>
                     </div>
-                    <h4 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">2. כתובת IP (הכתובת שלך ברשת)</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">
+                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">2. כתובת IP (הכתובת שלך ברשת)</h4>
+                    <p class="text-sm md:text-base text-slate-700 leading-relaxed font-medium">
                         הכתובת הלוגית של המחשב בתוך הרשת הביתית. הראוטר מחלק אותה באופן אוטומטי (DHCP). נראית כך:
-                        <code dir="ltr" class="block mt-2 p-2 bg-slate-100 rounded-lg text-emerald-800 code-font border border-emerald-200 text-center font-bold">192.168.1.15</code>
+                        <code dir="ltr" class="block mt-2.5 p-2.5 bg-amber-50/80 rounded-xl text-emerald-900 code-font border border-emerald-200 text-center font-bold text-sm md:text-base shadow-sm">192.168.1.15</code>
                     </p>
                 </div>
 
                 <!-- Subnet Mask -->
-                <div class="cyber-card hover:border-amber-400 transition-all duration-300 rounded-2xl p-6 space-y-4 group">
+                <div class="cyber-card hover:border-amber-500 transition-all duration-300 rounded-2xl p-6 space-y-4 group">
                     <div class="hud-corner hud-tl"></div><div class="hud-corner hud-br"></div>
                     <div class="flex items-center justify-between">
-                        <span class="p-3 bg-amber-100 text-amber-700 rounded-xl border border-amber-200 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-map-location-dot text-xl"></i>
+                        <span class="p-3.5 bg-amber-100 text-amber-800 rounded-xl border border-amber-300 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-map-location-dot text-2xl"></i>
                         </span>
-                        <span class="text-[10px] code-font text-amber-800 bg-amber-50 px-2 py-1 rounded border border-amber-200" dir="ltr">Subnet Mask</span>
+                        <span class="text-xs code-font font-bold text-amber-900 bg-amber-100 px-2.5 py-1 rounded border border-amber-300" dir="ltr">Subnet Mask</span>
                     </div>
-                    <h4 class="text-lg font-bold text-slate-900 group-hover:text-amber-700 transition-colors">3. מסכת רשת (Subnet Mask)</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">
+                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-amber-700 transition-colors">3. מסכת רשת (Subnet Mask)</h4>
+                    <p class="text-sm md:text-base text-slate-700 leading-relaxed font-medium">
                         הקוד שמפריד בין "שם השכונה" ל"מספר הבית". ברוב הרשתות הביתיות היא תהיה:
-                        <code dir="ltr" class="block mt-2 p-2 bg-slate-100 rounded-lg text-amber-800 code-font border border-amber-200 text-center font-bold">255.255.255.0</code>
+                        <code dir="ltr" class="block mt-2.5 p-2.5 bg-amber-50/80 rounded-xl text-amber-900 code-font border border-amber-300 text-center font-bold text-sm md:text-base shadow-sm">255.255.255.0</code>
                     </p>
                 </div>
 
@@ -306,15 +305,15 @@
                     <div class="hud-corner hud-tl"></div><div class="hud-corner hud-tr"></div>
                     <div class="hud-corner hud-bl"></div><div class="hud-corner hud-br"></div>
                     <div class="flex items-center justify-between">
-                        <span class="p-3 bg-sky-100 text-sky-700 rounded-xl border border-sky-200 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-router text-xl"></i>
+                        <span class="p-3.5 bg-sky-100 text-sky-700 rounded-xl border border-sky-200 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-router text-2xl"></i>
                         </span>
-                        <span class="text-[10px] code-font text-sky-800 font-bold bg-sky-50 px-2 py-1 rounded border border-sky-200" dir="ltr">Default Gateway</span>
+                        <span class="text-xs code-font font-bold text-sky-900 bg-sky-100 px-2.5 py-1 rounded border border-sky-300" dir="ltr">Default Gateway</span>
                     </div>
-                    <h4 class="text-lg font-bold text-slate-900 group-hover:text-sky-700 transition-colors">4. שער ברירת המחדל (הראוטר!)</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        <strong class="text-sky-700">שער היציאה לאינטרנט.</strong> זוהי הכתובת הפנימית של הראוטר הביתי שלך. כל חבילת מידע שרוצה לצאת החוצה עוברת דרכו! למשל:
-                        <code dir="ltr" class="block mt-2 p-2 bg-slate-100 rounded-lg text-sky-800 code-font border border-sky-300 text-center font-bold">192.168.1.1</code>
+                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-sky-700 transition-colors">4. שער ברירת המחדל (הראוטר!)</h4>
+                    <p class="text-sm md:text-base text-slate-700 leading-relaxed font-medium">
+                        <strong class="text-sky-800 font-bold">שער היציאה לאינטרנט.</strong> זוהי הכתובת הפנימית של הראוטר הביתי שלך. כל חבילת מידע שרוצה לצאת החוצה עוברת דרכו! למשל:
+                        <code dir="ltr" class="block mt-2.5 p-2.5 bg-amber-50/80 rounded-xl text-sky-900 code-font border border-sky-300 text-center font-bold text-sm md:text-base shadow-sm">192.168.1.1</code>
                     </p>
                 </div>
             </div>
@@ -323,28 +322,28 @@
         <!-- STEP 2: Hands-on Lab -->
         <section class="space-y-6">
             <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-500 to-blue-600 text-white font-black flex items-center justify-center text-base shadow-lg shadow-sky-500/20 border border-sky-300">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-500 to-blue-600 text-white font-black flex items-center justify-center text-lg shadow-lg shadow-sky-500/20 border border-sky-300">
                     2
                 </div>
-                <h3 class="text-xl font-bold tracking-wide text-slate-900">המעבדה: שלוף את נתוני הרשת שלך!</h3>
+                <h3 class="text-2xl md:text-3xl font-black tracking-wide text-slate-900">המעבדה: שלוף את נתוני הרשת שלך!</h3>
             </div>
 
             <div class="cyber-card rounded-3xl p-6 md:p-8 space-y-6">
                 <div class="hud-corner hud-tl"></div><div class="hud-corner hud-tr"></div>
                 <div class="hud-corner hud-bl"></div><div class="hud-corner hud-br"></div>
 
-                <div class="space-y-3">
-                    <h4 class="text-lg font-bold text-sky-700 flex items-center gap-2">
-                        <i class="fa-solid fa-list-check"></i> הוראות ביצוע צעד-אחר-צעד:
+                <div class="space-y-4">
+                    <h4 class="text-xl font-bold text-sky-800 flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-sky-600"></i> הוראות ביצוע צעד-אחר-צעד:
                     </h4>
-                    <ol class="list-decimal list-inside text-sm space-y-2.5 pr-2 text-slate-700">
-                        <li>לחץ במקלדת על מקש <kbd dir="ltr" class="inline-block bg-slate-100 border border-slate-300 text-sky-800 px-2 py-1 rounded text-xs code-font font-bold shadow-sm">Windows + R</kbd> (או חפש <strong class="text-sky-700" dir="ltr">CMD</strong> בשורת החיפוש).</li>
-                        <li>בחלונית שנפתחה הקלד <code dir="ltr" class="inline-block bg-slate-100 px-2 py-0.5 rounded text-sky-700 font-bold code-font border border-slate-300">cmd</code> ולחץ <strong class="text-sky-700">Enter</strong>.</li>
-                        <li>בחלון השחור שנפתח, הקלד את הפקודה הבאה ולחץ <strong class="text-sky-700">Enter</strong>:</li>
+                    <ol class="list-decimal list-inside text-base md:text-lg space-y-3 pr-2 text-slate-800 font-medium">
+                        <li>לחץ במקלדת על מקש <kbd dir="ltr" class="inline-block bg-amber-100 border border-amber-300 text-sky-900 px-2.5 py-1 rounded-lg text-sm code-font font-bold shadow-sm">Windows + R</kbd> (או חפש <strong class="text-sky-800" dir="ltr">CMD</strong> בשורת החיפוש).</li>
+                        <li>בחלונית שנפתחה הקלד <code dir="ltr" class="inline-block bg-amber-100 px-2.5 py-0.5 rounded text-sky-900 font-bold code-font border border-amber-300 text-sm md:text-base">cmd</code> ולחץ <strong class="text-sky-800 font-bold">Enter</strong>.</li>
+                        <li>בחלון השחור שנפתח, הקלד את הפקודה הבאה ולחץ <strong class="text-sky-800 font-bold">Enter</strong>:</li>
                     </ol>
                 </div>
 
-                <!-- Terminal Box -->
+                <!-- Terminal Box (נשארה מעולה וללא שינוי בפונטים הפנימיים) -->
                 <div class="bg-slate-950 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden text-left" dir="ltr">
                     <!-- Terminal Header Bar -->
                     <div class="bg-slate-900/90 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
@@ -365,7 +364,7 @@
                     <!-- Terminal Content Area -->
                     <div class="p-4 md:p-6 code-font text-xs md:text-sm text-slate-300 leading-relaxed overflow-x-auto space-y-3" dir="ltr">
                         
-                        <!-- Command Prompt Execution (Fixed LTR Rendering) -->
+                        <!-- Command Prompt Execution -->
                         <div class="flex items-center gap-2 text-slate-100 font-bold border-b border-slate-800/80 pb-3" dir="ltr">
                             <span class="text-slate-500 select-none" dir="ltr">C:\Users\Student&gt;</span>
                             <bdi dir="ltr" class="text-sky-400 bg-sky-950/60 px-2 py-0.5 rounded border border-sky-800/50 code-font font-bold">ipconfig /all</bdi>
@@ -428,18 +427,18 @@
                     </div>
                 </div>
 
-                <!-- Guidance on reading output -->
-                <div class="bg-sky-50/80 border border-sky-200 rounded-2xl p-5 space-y-3 relative">
-                    <h5 class="text-sm font-bold text-sky-800 flex items-center gap-2">
+                <!-- Guidance on reading output (פונט מוגדל ומותאם) -->
+                <div class="bg-amber-50/90 border border-amber-200/80 rounded-2xl p-6 space-y-4 relative shadow-sm">
+                    <h5 class="text-base md:text-lg font-bold text-sky-900 flex items-center gap-2">
                         <i class="fa-solid fa-magnifying-glass text-sky-600"></i> מה מחפשים בחלון השחור?
                     </h5>
-                    <p class="text-xs text-slate-600 leading-relaxed">
-                        חפש את כרטיס הרשת הפעיל שלך (בדרך כלל נקרא <strong class="text-sky-800" dir="ltr">Wireless LAN adapter Wi-Fi</strong> אם אתה באלחוטי, או <strong class="text-sky-800" dir="ltr">Ethernet adapter</strong> אם אתה מחובר בכבל):
+                    <p class="text-sm md:text-base text-slate-800 leading-relaxed font-medium">
+                        חפש את כרטיס הרשת הפעיל שלך (בדרך כלל נקרא <strong class="text-sky-800 font-bold" dir="ltr">Wireless LAN adapter Wi-Fi</strong> אם אתה באלחוטי, או <strong class="text-sky-800 font-bold" dir="ltr">Ethernet adapter</strong> אם אתה מחובר בכבל):
                     </p>
-                    <ul class="text-xs text-slate-700 space-y-2 font-mono pr-4 list-disc">
-                        <li><span class="text-purple-700 font-bold" dir="ltr">Physical Address:</span> זוהי כתובת ה-MAC של הכרטיס.</li>
-                        <li><span class="text-emerald-700 font-bold" dir="ltr">IPv4 Address:</span> כתובת ה-IP האישית של המחשב שלך.</li>
-                        <li><span class="text-sky-700 font-bold" dir="ltr">Default Gateway:</span> <span class="text-amber-700 font-sans font-bold">💥 הנה הראוטר שלך!</span> רשום את הכתובת הזו בצד.</li>
+                    <ul class="text-sm md:text-base text-slate-800 space-y-2.5 font-medium pr-5 list-disc">
+                        <li><span class="text-purple-800 font-bold code-font" dir="ltr">Physical Address:</span> זוהי כתובת ה-MAC של הכרטיס.</li>
+                        <li><span class="text-emerald-800 font-bold code-font" dir="ltr">IPv4 Address:</span> כתובת ה-IP האישית של המחשב שלך.</li>
+                        <li><span class="text-sky-800 font-bold code-font" dir="ltr">Default Gateway:</span> <span class="text-amber-800 font-sans font-bold">💥 הנה הראוטר שלך!</span> רשום את הכתובת הזו בצד.</li>
                     </ul>
                 </div>
             </div>
@@ -448,75 +447,75 @@
         <!-- STEP 3: Interactive Challenge -->
         <section class="space-y-6">
             <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-500 to-blue-600 text-white font-black flex items-center justify-center text-base shadow-lg shadow-sky-500/20 border border-sky-300">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-sky-500 to-blue-600 text-white font-black flex items-center justify-center text-lg shadow-lg shadow-sky-500/20 border border-sky-300">
                     3
                 </div>
-                <h3 class="text-xl font-bold tracking-wide text-slate-900">אתגר הפיצוח: בדוק את עצמך</h3>
+                <h3 class="text-2xl md:text-3xl font-black tracking-wide text-slate-900">אתגר הפיצוח: בדוק את עצמך</h3>
             </div>
 
             <div class="cyber-card rounded-3xl p-6 md:p-8 space-y-6">
                 <div class="hud-corner hud-tl"></div><div class="hud-corner hud-tr"></div>
                 <div class="hud-corner hud-bl"></div><div class="hud-corner hud-br"></div>
 
-                <p class="text-sm text-slate-700">הזן את הכתובות שמצאת במסוף כדי לאמת שהבנת את המבנה:</p>
+                <p class="text-base md:text-lg text-slate-800 font-medium">הזן את הכתובות שמצאת במסוף כדי לאמת שהבנת את המבנה:</p>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div class="space-y-2">
-                        <label class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2.5">
+                        <label class="text-sm md:text-base font-bold text-slate-800 flex items-center gap-2">
                             <i class="fa-solid fa-laptop text-emerald-600"></i> מהי כתובת ה-IP של המחשב שלך?
                         </label>
-                        <input type="text" id="input-ip" dir="ltr" placeholder="192.168.1.15" class="w-full bg-white border border-slate-300 focus:border-sky-500 rounded-xl px-4 py-3 text-xs text-sky-800 code-font focus:outline-none focus:ring-2 focus:ring-sky-500/20 transition-all placeholder:text-slate-400 shadow-sm text-left">
+                        <input type="text" id="input-ip" dir="ltr" placeholder="192.168.1.15" class="w-full bg-white border border-amber-300 focus:border-sky-500 rounded-xl px-4 py-3.5 text-sm md:text-base text-sky-900 code-font focus:outline-none focus:ring-2 focus:ring-sky-500/20 transition-all placeholder:text-slate-400 shadow-sm text-left font-bold">
                     </div>
-                    <div class="space-y-2">
-                        <label class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                    <div class="space-y-2.5">
+                        <label class="text-sm md:text-base font-bold text-slate-800 flex items-center gap-2">
                             <i class="fa-solid fa-network-wired text-sky-600"></i> מהי כתובת הראוטר (Default Gateway)?
                         </label>
-                        <input type="text" id="input-gw" dir="ltr" placeholder="192.168.1.1" class="w-full bg-white border border-slate-300 focus:border-sky-500 rounded-xl px-4 py-3 text-xs text-sky-800 code-font focus:outline-none focus:ring-2 focus:ring-sky-500/20 transition-all placeholder:text-slate-400 shadow-sm text-left">
+                        <input type="text" id="input-gw" dir="ltr" placeholder="192.168.1.1" class="w-full bg-white border border-amber-300 focus:border-sky-500 rounded-xl px-4 py-3.5 text-sm md:text-base text-sky-900 code-font focus:outline-none focus:ring-2 focus:ring-sky-500/20 transition-all placeholder:text-slate-400 shadow-sm text-left font-bold">
                     </div>
                 </div>
 
-                <button onclick="checkAnswers()" class="w-full relative group overflow-hidden rounded-xl p-0.5 font-black text-sm shadow-md shadow-sky-500/10">
+                <button onclick="checkAnswers()" class="w-full relative group overflow-hidden rounded-xl p-0.5 font-black text-base shadow-md shadow-sky-500/10">
                     <span class="absolute inset-0 bg-gradient-to-r from-sky-500 via-teal-500 to-blue-600 rounded-xl transition-all duration-300 group-hover:opacity-90"></span>
-                    <span class="relative block bg-gradient-to-r from-sky-500 to-blue-600 text-white py-3.5 px-6 rounded-[11px] font-black transition-all duration-300 group-hover:bg-transparent text-center">
+                    <span class="relative block bg-gradient-to-r from-sky-500 to-blue-600 text-white py-4 px-6 rounded-[11px] font-black transition-all duration-300 group-hover:bg-transparent text-center text-base md:text-lg">
                         אמת נתונים וסיים משימה 🚀
                     </span>
                 </button>
 
-                <div id="feedback" class="hidden p-4 rounded-xl text-xs font-bold text-center transition-all duration-300 backdrop-blur-md"></div>
+                <div id="feedback" class="hidden p-4 rounded-xl text-sm md:text-base font-bold text-center transition-all duration-300 backdrop-blur-md"></div>
             </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-200 bg-white/80 py-6 text-center text-slate-500 text-xs mt-12 relative z-10 backdrop-blur-md">
+    <footer class="border-t border-amber-200/60 bg-amber-50/90 py-6 text-center text-slate-600 text-xs md:text-sm font-semibold mt-12 relative z-10 backdrop-blur-md">
         <p>אקדמיית סייבר ורשתות תקשורת • למידה חווייתית ואינטראקטיבית</p>
     </footer>
 
     <!-- כפתור עזרה צף מוגדל ומודגש + בועת התראה -->
     <div class="fixed bottom-6 left-6 z-50 flex flex-col items-start gap-2">
         <!-- Tooltip/Bubble -->
-        <div class="bg-sky-900 text-white text-[11px] font-extrabold px-3 py-1.5 rounded-xl shadow-lg border border-sky-400 animate-bounce-subtle flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <div class="bg-sky-900 text-white text-xs font-extrabold px-3.5 py-2 rounded-xl shadow-lg border border-sky-400 animate-bounce-subtle flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
             <span>צריך עזרה? הקלק כאן! 🤖</span>
         </div>
 
         <!-- Button -->
-        <button id="openHelpModalBtn" class="glow-button flex items-center gap-3 bg-gradient-to-r from-sky-500 via-sky-600 to-blue-700 hover:from-sky-400 hover:to-blue-600 text-white font-black py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 group border-2 border-white">
-            <div class="w-9 h-9 rounded-full border-2 border-white overflow-hidden bg-slate-900 flex-shrink-0 shadow-inner group-hover:rotate-12 transition-transform">
+        <button id="openHelpModalBtn" class="glow-button flex items-center gap-3 bg-gradient-to-r from-sky-500 via-sky-600 to-blue-700 hover:from-sky-400 hover:to-blue-600 text-white font-black py-3.5 px-6 rounded-full transition-all duration-300 transform hover:scale-105 group border-2 border-white">
+            <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden bg-slate-900 flex-shrink-0 shadow-inner group-hover:rotate-12 transition-transform">
                 <img src="https://lh3.googleusercontent.com/d/1fzqv93VKIW_VT8-e1HdJxBmbU2sFnwlb" alt="אווטר בוט עזרה" class="w-full h-full object-cover">
             </div>
-            <span class="tracking-wide text-sm">בוט עזרה</span>
+            <span class="tracking-wide text-base">בוט עזרה</span>
         </button>
     </div>
 
-    <!-- חלונית עזרה צפה (Modal) - מעוצבת למקסימום נוכחות -->
+    <!-- חלונית עזרה צפה (Modal) -->
     <div id="helpModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-md z-[100] hidden flex items-center justify-center p-4 transition-all duration-300">
-        <div class="cyber-card rounded-3xl p-6 md:p-8 max-w-sm w-full text-center relative shadow-2xl border-2 border-sky-400 bg-white transform scale-95 transition-transform duration-300" id="helpModalContent">
+        <div class="cyber-card rounded-3xl p-6 md:p-8 max-w-sm w-full text-center relative shadow-2xl border-2 border-sky-400 bg-amber-50 transform scale-95 transition-transform duration-300" id="helpModalContent">
             <div class="hud-corner hud-tl"></div><div class="hud-corner hud-tr"></div>
             <div class="hud-corner hud-bl"></div><div class="hud-corner hud-br"></div>
 
-            <button id="closeHelpModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 transition-colors p-2 rounded-full hover:bg-slate-100">
+            <button id="closeHelpModalBtn" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 transition-colors p-2 rounded-full hover:bg-amber-100">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
             
@@ -524,12 +523,12 @@
                 <img src="https://lh3.googleusercontent.com/d/1fzqv93VKIW_VT8-e1HdJxBmbU2sFnwlb" alt="תמונת בוט עזרה" class="w-full h-full object-cover rounded-full">
             </div>
 
-            <h3 class="text-xl font-black text-slate-900 mb-2 tracking-wide">צריך עזרה במשימה?</h3>
-            <p class="text-xs text-slate-600 mb-6 leading-relaxed">בוט העזרה הרשמי של האקדמיה זמין כעת כדי לענות על שאלות, להסביר מושגים ולכוון אותך לפתרון המלא!</p>
+            <h3 class="text-xl md:text-2xl font-black text-slate-900 mb-2 tracking-wide">צריך עזרה במשימה?</h3>
+            <p class="text-sm text-slate-700 mb-6 leading-relaxed font-medium">בוט העזרה הרשמי של האקדמיה זמין כעת כדי לענות על שאלות, להסביר מושגים ולכוון אותך לפתרון המלא!</p>
             
-            <a href="https://gemini.google.com/gem/167016ac4a4b/66c3b83daa7940ef?usp=sharing" target="_blank" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-black py-3.5 px-4 rounded-xl transition-all duration-200 shadow-lg shadow-sky-500/25">
+            <a href="https://gemini.google.com/gem/167016ac4a4b/66c3b83daa7940ef?usp=sharing" target="_blank" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-black py-3.5 px-4 rounded-xl transition-all duration-200 shadow-lg shadow-sky-500/25 text-base">
                 <span>הפעל את בוט העזרה</span>
-                <i data-lucide="external-link" class="w-4 h-4"></i>
+                <i data-lucide="external-link" class="w-5 h-5"></i>
             </a>
         </div>
     </div>
@@ -577,10 +576,10 @@
             feedback.classList.remove('hidden', 'bg-emerald-100', 'text-emerald-800', 'border-emerald-300', 'bg-rose-100', 'text-rose-800', 'border-rose-300');
 
             if(ip !== "" && gw !== "") {
-                feedback.classList.add('bg-emerald-100', 'text-emerald-800', 'border', 'border-emerald-300', 'shadow-md');
+                feedback.classList.add('bg-emerald-100', 'text-emerald-900', 'border', 'border-emerald-300', 'shadow-md');
                 feedback.innerHTML = '🎉 עבודה מעולה! פענחת בהצלחה את כתובות הרשת. כעת אתה יודע בדיוק איפה נמצא הראוטר שלך!';
             } else {
-                feedback.classList.add('bg-rose-100', 'text-rose-800', 'border', 'border-rose-300', 'shadow-md');
+                feedback.classList.add('bg-rose-100', 'text-rose-900', 'border', 'border-rose-300', 'shadow-md');
                 feedback.innerHTML = '⚠️ נא למלא את שתי הכתובות כדי לסיים את המשימה.';
             }
         }
