@@ -86,6 +86,22 @@
             font-family: 'JetBrains Mono', 'Fira Code', monospace;
         }
 
+        /* מיסגור מושגים באנגלית בכל הטאבים והטקסטים */
+        .en-term {
+            direction: ltr;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            padding: 1px 6px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #0f172a;
+            unicode-bidi: isolate;
+        }
+
         /* 🎯 האוואטר המטורלל המסתובב */
         .crazy-avatar {
             width: 56px;
@@ -208,7 +224,7 @@
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
                       <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-600"></span>
                     </span>
-                    <span class="text-xs md:text-sm font-bold text-sky-800 tracking-wider code-font uppercase" dir="ltr">STATUS: ACTIVE</span>
+                    <span class="text-xs md:text-sm font-bold text-sky-800 tracking-wider code-font uppercase" dir="ltr"><span class="en-term">STATUS: ACTIVE</span></span>
                 </div>
             </div>
         </div>
@@ -227,7 +243,7 @@
             <div class="relative z-10 space-y-4">
                 <div class="inline-flex items-center gap-2 bg-sky-100 text-sky-900 text-xs md:text-sm font-bold px-3.5 py-1.5 rounded-full border border-sky-300 code-font">
                     <i class="fa-solid fa-shield-halved text-sky-600"></i>
-                    <span dir="ltr">MISSION_BRIEFING // 01</span>
+                    <span dir="ltr"><span class="en-term">MISSION_BRIEFING // 01</span></span>
                 </div>
                 
                 <h2 class="text-2xl md:text-3xl font-black tracking-wide text-slate-900">
@@ -236,8 +252,8 @@
                 
                 <p class="text-base md:text-lg leading-relaxed max-w-3xl text-slate-800 font-medium">
                     כדי לגלוש באינטרנט, לשחק אונליין או לשלוח הודעה – המחשב שלך חייב <span class="text-sky-700 font-bold">"תעודת זהות"</span> רשתית. 
-                    בשיעור הזה נהפוך לחוקרי סייבר: נלמד לפתוח את מסוף המחשב (<span dir="ltr" class="inline-block code-font text-sky-900 font-bold bg-sky-100 px-2 py-0.5 rounded border border-sky-300">CMD</span>), 
-                    נאתר את <strong class="text-sky-800 font-bold">כרטיס הרשת</strong> הפיזי, ונחשוף את כתובת ה-IP של <strong class="text-blue-800 font-bold">הראוטר בבית (Default Gateway)</strong>!
+                    בשיעור הזה נהפוך לחוקרי סייבר: נלמד לפתוח את מסוף המחשב <span dir="ltr" class="inline-block code-font text-sky-900 font-bold bg-sky-100 px-2 py-0.5 rounded border border-sky-300"><span class="en-term">CMD</span></span>, 
+                    נאתר את <strong class="text-sky-800 font-bold">כרטיס הרשת</strong> הפיזי, ונחשוף את כתובת ה-IP של <strong class="text-blue-800 font-bold">הראוטר בבית <span class="en-term">Default Gateway</span></strong>!
                 </p>
             </div>
         </section>
@@ -259,9 +275,9 @@
                         <span class="p-3.5 bg-purple-100 text-purple-700 rounded-xl border border-purple-200 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-fingerprint text-2xl"></i>
                         </span>
-                        <span class="text-xs code-font font-bold text-purple-900 bg-purple-100 px-2.5 py-1 rounded border border-purple-300" dir="ltr">Physical Address</span>
+                        <span class="text-xs code-font font-bold text-purple-900 bg-purple-100 px-2.5 py-1 rounded border border-purple-300" dir="ltr"><span class="en-term">Physical Address</span></span>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-purple-700 transition-colors">1. כתובת MAC (כרטיס הרשת)</h4>
+                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-purple-700 transition-colors">1. כתובת <span class="en-term">MAC</span> כרטיס הרשת</h4>
                     <p class="text-sm md:text-base text-slate-700 leading-relaxed font-medium">
                         זהו "מספר תעודת הזהות" הפיזי של כרטיס הרשת שלך. הוא נצרב במפעל ולא משתנה לעולם! נראה כך: 
                         <code dir="ltr" class="block mt-2.5 p-2.5 bg-amber-50/80 rounded-xl text-purple-900 code-font border border-purple-200 text-center font-bold text-sm md:text-base shadow-sm">00-1A-2B-3C-4D-5E</code>
@@ -275,11 +291,11 @@
                         <span class="p-3.5 bg-emerald-100 text-emerald-700 rounded-xl border border-emerald-200 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-network-wired text-2xl"></i>
                         </span>
-                        <span class="text-xs code-font font-bold text-emerald-900 bg-emerald-100 px-2.5 py-1 rounded border border-emerald-300" dir="ltr">IPv4 Address</span>
+                        <span class="text-xs code-font font-bold text-emerald-900 bg-emerald-100 px-2.5 py-1 rounded border border-emerald-300" dir="ltr"><span class="en-term">IPv4 Address</span></span>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">2. כתובת IP (הכתובת שלך ברשת)</h4>
+                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">2. כתובת <span class="en-term">IP</span> הכתובת שלך ברשת</h4>
                     <p class="text-sm md:text-base text-slate-700 leading-relaxed font-medium">
-                        הכתובת הלוגית של המחשב בתוך הרשת הביתית. הראוטר מחלק אותה באופן אוטומטי (DHCP). נראית כך:
+                        הכתובת הלוגית של המחשב בתוך הרשת הביתית. הראוטר מחלק אותה באופן אוטומטי <span class="en-term">DHCP</span>. נראית כך:
                         <code dir="ltr" class="block mt-2.5 p-2.5 bg-amber-50/80 rounded-xl text-emerald-900 code-font border border-emerald-200 text-center font-bold text-sm md:text-base shadow-sm">192.168.1.15</code>
                     </p>
                 </div>
@@ -291,9 +307,9 @@
                         <span class="p-3.5 bg-amber-100 text-amber-800 rounded-xl border border-amber-300 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-map-location-dot text-2xl"></i>
                         </span>
-                        <span class="text-xs code-font font-bold text-amber-900 bg-amber-100 px-2.5 py-1 rounded border border-amber-300" dir="ltr">Subnet Mask</span>
+                        <span class="text-xs code-font font-bold text-amber-900 bg-amber-100 px-2.5 py-1 rounded border border-amber-300" dir="ltr"><span class="en-term">Subnet Mask</span></span>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-amber-700 transition-colors">3. מסכת רשת (Subnet Mask)</h4>
+                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-amber-700 transition-colors">3. מסכת רשת <span class="en-term">Subnet Mask</span></h4>
                     <p class="text-sm md:text-base text-slate-700 leading-relaxed font-medium">
                         הקוד שמפריד בין "שם השכונה" ל"מספר הבית". ברוב הרשתות הביתיות היא תהיה:
                         <code dir="ltr" class="block mt-2.5 p-2.5 bg-amber-50/80 rounded-xl text-amber-900 code-font border border-amber-300 text-center font-bold text-sm md:text-base shadow-sm">255.255.255.0</code>
@@ -308,9 +324,9 @@
                         <span class="p-3.5 bg-sky-100 text-sky-700 rounded-xl border border-sky-200 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-router text-2xl"></i>
                         </span>
-                        <span class="text-xs code-font font-bold text-sky-900 bg-sky-100 px-2.5 py-1 rounded border border-sky-300" dir="ltr">Default Gateway</span>
+                        <span class="text-xs code-font font-bold text-sky-900 bg-sky-100 px-2.5 py-1 rounded border border-sky-300" dir="ltr"><span class="en-term">Default Gateway</span></span>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-sky-700 transition-colors">4. שער ברירת המחדל (הראוטר!)</h4>
+                    <h4 class="text-xl font-bold text-slate-900 group-hover:text-sky-700 transition-colors">4. שער ברירת המחדל הראוטר</h4>
                     <p class="text-sm md:text-base text-slate-700 leading-relaxed font-medium">
                         <strong class="text-sky-800 font-bold">שער היציאה לאינטרנט.</strong> זוהי הכתובת הפנימית של הראוטר הביתי שלך. כל חבילת מידע שרוצה לצאת החוצה עוברת דרכו! למשל:
                         <code dir="ltr" class="block mt-2.5 p-2.5 bg-amber-50/80 rounded-xl text-sky-900 code-font border border-sky-300 text-center font-bold text-sm md:text-base shadow-sm">192.168.1.1</code>
@@ -337,13 +353,13 @@
                         <i class="fa-solid fa-list-check text-sky-600"></i> הוראות ביצוע צעד-אחר-צעד:
                     </h4>
                     <ol class="list-decimal list-inside text-base md:text-lg space-y-3 pr-2 text-slate-800 font-medium">
-                        <li>לחץ במקלדת על מקש <kbd dir="ltr" class="inline-block bg-amber-100 border border-amber-300 text-sky-900 px-2.5 py-1 rounded-lg text-sm code-font font-bold shadow-sm">Windows + R</kbd> (או חפש <strong class="text-sky-800" dir="ltr">CMD</strong> בשורת החיפוש).</li>
-                        <li>בחלונית שנפתחה הקלד <code dir="ltr" class="inline-block bg-amber-100 px-2.5 py-0.5 rounded text-sky-900 font-bold code-font border border-amber-300 text-sm md:text-base">cmd</code> ולחץ <strong class="text-sky-800 font-bold">Enter</strong>.</li>
-                        <li>בחלון השחור שנפתח, הקלד את הפקודה הבאה ולחץ <strong class="text-sky-800 font-bold">Enter</strong>:</li>
+                        <li>לחץ במקלדת על מקש <kbd dir="ltr" class="inline-block bg-amber-100 border border-amber-300 text-sky-900 px-2.5 py-1 rounded-lg text-sm code-font font-bold shadow-sm"><span class="en-term">Windows + R</span></kbd> או חפש <strong class="text-sky-800" dir="ltr"><span class="en-term">CMD</span></strong> בשורת החיפוש.</li>
+                        <li>בחלונית שנפתחה הקלד <code dir="ltr" class="inline-block bg-amber-100 px-2.5 py-0.5 rounded text-sky-900 font-bold code-font border border-amber-300 text-sm md:text-base"><span class="en-term">cmd</span></code> ולחץ <strong class="text-sky-800 font-bold"><span class="en-term">Enter</span></strong>.</li>
+                        <li>בחלון השחור שנפתח, הקלד את הפקודה הבאה ולחץ <strong class="text-sky-800 font-bold"><span class="en-term">Enter</span></strong>:</li>
                     </ol>
                 </div>
 
-                <!-- Terminal Box (נשארה מעולה וללא שינוי בפונטים הפנימיים) -->
+                <!-- Terminal Box -->
                 <div class="bg-slate-950 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden text-left" dir="ltr">
                     <!-- Terminal Header Bar -->
                     <div class="bg-slate-900/90 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
@@ -357,7 +373,7 @@
                             <button onclick="navigator.clipboard.writeText('ipconfig /all')" class="text-xs code-font bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded border border-slate-700 flex items-center gap-1.5 transition-colors" dir="ltr">
                                 <i class="fa-regular fa-copy"></i> Copy
                             </button>
-                            <span class="text-[10px] code-font bg-sky-950 text-sky-400 border border-sky-800/60 px-2 py-0.5 rounded" dir="ltr">CMD SIMULATOR</span>
+                            <span class="text-[10px] code-font bg-sky-950 text-sky-400 border border-sky-800/60 px-2 py-0.5 rounded" dir="ltr"><span class="en-term">CMD SIMULATOR</span></span>
                         </div>
                     </div>
 
@@ -416,7 +432,7 @@
                                 <!-- Default Gateway -->
                                 <div class="bg-sky-950/60 border-l-2 border-sky-400 py-1 px-2 rounded-r my-1 text-sky-200 font-bold flex flex-wrap items-center justify-between gap-2 animate-pulse" dir="ltr">
                                     <span dir="ltr">&nbsp;&nbsp;Default Gateway . . . . . . . . . : 192.168.1.1</span>
-                                    <span class="text-[10px] font-sans bg-sky-800 text-sky-100 px-2 py-0.5 rounded border border-sky-400 shadow-sm" dir="rtl">🌐 Router (Default Gateway)</span>
+                                    <span class="text-[10px] font-sans bg-sky-800 text-sky-100 px-2 py-0.5 rounded border border-sky-400 shadow-sm" dir="rtl">🌐 Router Default Gateway</span>
                                 </div>
 
                                 <div>&nbsp;&nbsp;DHCP Server . . . . . . . . . . . : 192.168.1.1</div>
@@ -427,18 +443,18 @@
                     </div>
                 </div>
 
-                <!-- Guidance on reading output (פונט מוגדל ומותאם) -->
+                <!-- Guidance on reading output -->
                 <div class="bg-amber-50/90 border border-amber-200/80 rounded-2xl p-6 space-y-4 relative shadow-sm">
                     <h5 class="text-base md:text-lg font-bold text-sky-900 flex items-center gap-2">
                         <i class="fa-solid fa-magnifying-glass text-sky-600"></i> מה מחפשים בחלון השחור?
                     </h5>
                     <p class="text-sm md:text-base text-slate-800 leading-relaxed font-medium">
-                        חפש את כרטיס הרשת הפעיל שלך (בדרך כלל נקרא <strong class="text-sky-800 font-bold" dir="ltr">Wireless LAN adapter Wi-Fi</strong> אם אתה באלחוטי, או <strong class="text-sky-800 font-bold" dir="ltr">Ethernet adapter</strong> אם אתה מחובר בכבל):
+                        חפש את כרטיס הרשת הפעיל שלך בדרך כלל נקרא <strong class="text-sky-800 font-bold" dir="ltr"><span class="en-term">Wireless LAN adapter Wi-Fi</span></strong> אם אתה באלחוטי, או <strong class="text-sky-800 font-bold" dir="ltr"><span class="en-term">Ethernet adapter</span></strong> אם אתה מחובר בכבל:
                     </p>
                     <ul class="text-sm md:text-base text-slate-800 space-y-2.5 font-medium pr-5 list-disc">
-                        <li><span class="text-purple-800 font-bold code-font" dir="ltr">Physical Address:</span> זוהי כתובת ה-MAC של הכרטיס.</li>
-                        <li><span class="text-emerald-800 font-bold code-font" dir="ltr">IPv4 Address:</span> כתובת ה-IP האישית של המחשב שלך.</li>
-                        <li><span class="text-sky-800 font-bold code-font" dir="ltr">Default Gateway:</span> <span class="text-amber-800 font-sans font-bold">💥 הנה הראוטר שלך!</span> רשום את הכתובת הזו בצד.</li>
+                        <li><span class="text-purple-800 font-bold code-font" dir="ltr"><span class="en-term">Physical Address</span></span> זוהי כתובת ה-MAC של הכרטיס.</li>
+                        <li><span class="text-emerald-800 font-bold code-font" dir="ltr"><span class="en-term">IPv4 Address</span></span> כתובת ה-IP האישית של המחשב שלך.</li>
+                        <li><span class="text-sky-800 font-bold code-font" dir="ltr"><span class="en-term">Default Gateway</span></span> <span class="text-amber-800 font-sans font-bold">💥 הנה הראוטר שלך!</span> רשום את הכתובת הזו בצד.</li>
                     </ul>
                 </div>
             </div>
@@ -468,7 +484,7 @@
                     </div>
                     <div class="space-y-2.5">
                         <label class="text-sm md:text-base font-bold text-slate-800 flex items-center gap-2">
-                            <i class="fa-solid fa-network-wired text-sky-600"></i> מהי כתובת הראוטר (Default Gateway)?
+                            <i class="fa-solid fa-network-wired text-sky-600"></i> מהי כתובת הראוטר <span class="en-term">Default Gateway</span>?
                         </label>
                         <input type="text" id="input-gw" dir="ltr" placeholder="192.168.1.1" class="w-full bg-white border border-amber-300 focus:border-sky-500 rounded-xl px-4 py-3.5 text-sm md:text-base text-sky-900 code-font focus:outline-none focus:ring-2 focus:ring-sky-500/20 transition-all placeholder:text-slate-400 shadow-sm text-left font-bold">
                     </div>
@@ -509,7 +525,7 @@
         </button>
     </div>
 
-    <!-- חלונית עזרה צפה (Modal) -->
+    <!-- חלונית עזרה צפה Modal -->
     <div id="helpModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-md z-[100] hidden flex items-center justify-center p-4 transition-all duration-300">
         <div class="cyber-card rounded-3xl p-6 md:p-8 max-w-sm w-full text-center relative shadow-2xl border-2 border-sky-400 bg-amber-50 transform scale-95 transition-transform duration-300" id="helpModalContent">
             <div class="hud-corner hud-tl"></div><div class="hud-corner hud-tr"></div>
